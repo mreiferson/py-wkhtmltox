@@ -1,8 +1,13 @@
 %Module wkhtmltox 0
 
-class Wkhtmltox {
+class Wkhtmltoimage {
 %TypeHeaderCode
-#include <pdf.h>
 #include <image.h>
 %End
-}
+};
+
+class Wkhtmltopdf {
+%TypeHeaderCode
+#include <pdf.h>
+%End
+};
