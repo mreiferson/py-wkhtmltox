@@ -1,13 +1,6 @@
-%Module wkhtmltox 0
+%CModule wkhtmltox 0
 
-class Wkhtmltoimage {
-%TypeHeaderCode
-#include <image.h>
-%End
-};
-
-class Wkhtmltopdf {
-%TypeHeaderCode
-#include <pdf.h>
-%End
-};
+int wkhtmltopdf_init(int use_graphics);
+int wkhtmltopdf_deinit();
+int wkhtmltopdf_extended_qt();
+const char * wkhtmltopdf_version();
