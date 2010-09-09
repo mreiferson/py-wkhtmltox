@@ -9,7 +9,7 @@ cdef extern from "wkhtmltox/pdf.h":
         pass
     
     bint wkhtmltopdf_init(int use_graphics)
-    int wkhtmltopdf_deinit()
+    bint wkhtmltopdf_deinit()
     char *wkhtmltopdf_version()
     
     wkhtmltopdf_global_settings *wkhtmltopdf_create_global_settings()
@@ -63,6 +63,9 @@ cdef class Pdf:
         self._c_global_settings = wkhtmltopdf_create_global_settings()
         self._c_object_settings = wkhtmltopdf_create_object_settings()
     
+    def __dealloc__(self):
+        wkhtmltopdf_deinit();
+    
     def set_global_setting(self, char *name, char *value):
         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)
     
@@ -89,6 +92,9 @@ cdef class Image:
     def __cinit__(self):
         wkhtmltoimage_init(0)
         self._c_global_settings = wkhtmltoimage_create_global_settings()
+    
+    def __dealloc__(self):
+        wkhtmltoimage_deinit();
     
     def set_global_setting(self, char *name, char *value):
         return wkhtmltoimage_set_global_setting(self._c_global_settings, name, value)
