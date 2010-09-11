@@ -66,6 +66,9 @@ cdef class Pdf:
     def __dealloc__(self):
         wkhtmltopdf_deinit();
     
+    def version(self):
+        return wkhtmltopdf_version();
+    
     def set_global_setting(self, char *name, char *value):
         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)
     
@@ -95,6 +98,9 @@ cdef class Image:
     
     def __dealloc__(self):
         wkhtmltoimage_deinit();
+    
+    def version(self):
+        return wkhtmltopdf_version();
     
     def set_global_setting(self, char *name, char *value):
         return wkhtmltoimage_set_global_setting(self._c_global_settings, name, value)
