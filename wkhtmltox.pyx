@@ -57,6 +57,7 @@ cdef class Pdf:
     cdef wkhtmltopdf_global_settings *_c_global_settings
     cdef wkhtmltopdf_object_settings *_c_object_settings
     cdef bint last_http_error_code
+    pages = []
     
     def __cinit__(self):
         wkhtmltopdf_init(0)
@@ -72,13 +73,24 @@ cdef class Pdf:
     def set_global_setting(self, char *name, char *value):
         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)
     
-    def set_object_setting(self, char *name, char *value):
-        return wkhtmltopdf_set_object_setting(self._c_object_settings, name, value)
+    def add_page(self, settings):
+        self.pages.append(settings)
     
     def convert(self):
         cdef wkhtmltopdf_converter *c
+        cdef wkhtmltopdf_object_settings *os
+        
+        if not len(self.pages):
+            return false
+            
         c = wkhtmltopdf_create_converter(self._c_global_settings)
-        wkhtmltopdf_add_object(c, self._c_object_settings, NULL)
+        
+        for page in self.pages:
+            os = wkhtmltopdf_create_object_settings()
+            for k, v in page.iteritems():
+                wkhtmltopdf_set_object_setting(os, k, v)
+            wkhtmltopdf_add_object(c, os, NULL)
+        
         ret = wkhtmltopdf_convert(c)
         self.last_http_error_code = wkhtmltopdf_http_error_code(c)
         wkhtmltopdf_destroy_converter(c)
