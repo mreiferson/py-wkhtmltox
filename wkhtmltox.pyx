@@ -81,7 +81,7 @@ cdef class Pdf:
         cdef wkhtmltopdf_object_settings *os
         
         if not len(self.pages):
-            return false
+            return False
             
         c = wkhtmltopdf_create_converter(self._c_global_settings)
         
