@@ -8,6 +8,5 @@ setup(
     author="Matt Reiferson",
     author_email="mreiferson@gmail.com",
     url="http://github.com/mreiferson/py-wkhtmltox",
-    cmdclass = {"build_ext": build_ext},
     ext_modules = [Extension("wkhtmltox", ["wkhtmltox.c"], libraries=["wkhtmltox"])]
 )
