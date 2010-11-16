@@ -10,7 +10,6 @@ Tested on:
 
 Pre-requisites on all platforms:
 --------------------------------
- * you need Cython (tested with 0.13, $ easy_install cython)
  * you need libwkhtmltox.* somewhere in your LD path (/usr/local/lib)
  * you need the directory src/include/wkhtmltox from wkhtmltopdf somewhere on your include path (/usr/local/include)
 
@@ -18,6 +17,11 @@ Pre-requisites on all platforms:
 Notes on compiling for Mac OSX 10.6.4 Snow Leopard (64-bit Python/libwkhtmltox only):
 -------------------------------------------------------------------------------------
  * until this bug is fixed (http://bugreports.qt.nokia.com/browse/QTBUG-5952) you need qt_menu.nib directory from the QT source tree in the same directory as your libwkhtmltox.* libs
+
+
+Cython
+------
+ * you need Cython (tested with 0.13, $ easy_install cython) if you want to re-generate C source
 
 
 Installation
