@@ -53,19 +53,23 @@ cdef extern from "wkhtmltox/image.h":
     int wkhtmltoimage_http_error_code(wkhtmltoimage_converter *converter)
 
 
-cdef class Pdf:
+cdef int wkhtmltopdf_is_init = 0
+cdef int wkhtmltoimage_is_init = 0
+
+cdef class _Pdf:
     cdef wkhtmltopdf_global_settings *_c_global_settings
-    cdef wkhtmltopdf_object_settings *_c_object_settings
     cdef bint last_http_error_code
-    pages = []
     
     def __cinit__(self):
-        wkhtmltopdf_init(0)
+        global wkhtmltopdf_is_init
+        if not wkhtmltopdf_is_init:
+            wkhtmltopdf_is_init = wkhtmltopdf_init(0)
+        
         self._c_global_settings = wkhtmltopdf_create_global_settings()
-        self._c_object_settings = wkhtmltopdf_create_object_settings()
     
     def __dealloc__(self):
-        wkhtmltopdf_deinit();
+        pass
+        #wkhtmltopdf_deinit();
     
     def version(self):
         return wkhtmltopdf_version();
@@ -73,19 +77,16 @@ cdef class Pdf:
     def set_global_setting(self, char *name, char *value):
         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)
     
-    def add_page(self, settings):
-        self.pages.append(settings)
-    
-    def convert(self):
+    def convert(self, pages):
         cdef wkhtmltopdf_converter *c
         cdef wkhtmltopdf_object_settings *os
         
-        if not len(self.pages):
+        if not len(pages):
             return False
             
         c = wkhtmltopdf_create_converter(self._c_global_settings)
         
-        for page in self.pages:
+        for page in pages:
             os = wkhtmltopdf_create_object_settings()
             for k, v in page.iteritems():
                 wkhtmltopdf_set_object_setting(os, k, v)
@@ -100,16 +101,37 @@ cdef class Pdf:
         return self.last_http_error_code
 
 
+class Pdf:
+    pages = []
+    
+    def __init__(self):
+        self._pdf = _Pdf()
+        self.pages = []
+    
+    def add_page(self, settings):
+        self.pages.append(settings)
+    
+    def convert(self):
+        self._pdf.convert(self.pages)
+    
+    def __getattr__(self, name):
+        return getattr(self._pdf, name)
+
+
 cdef class Image:
     cdef wkhtmltoimage_global_settings *_c_global_settings
     cdef bint last_http_error_code
     
     def __cinit__(self):
-        wkhtmltoimage_init(0)
+        global wkhtmltoimage_is_init
+        if not wkhtmltoimage_is_init:
+            wkhtmltoimage_is_init = wkhtmltoimage_init(0)
+        
         self._c_global_settings = wkhtmltoimage_create_global_settings()
     
     def __dealloc__(self):
-        wkhtmltoimage_deinit();
+        pass
+        #wkhtmltoimage_deinit();
     
     def version(self):
         return wkhtmltopdf_version();
