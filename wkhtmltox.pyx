@@ -80,6 +80,7 @@ cdef class _Pdf:
     def convert(self, pages):
         cdef wkhtmltopdf_converter *c
         cdef wkhtmltopdf_object_settings *os
+        cdef char *c_html_data
         
         if not len(pages):
             return False
@@ -90,7 +91,11 @@ cdef class _Pdf:
             os = wkhtmltopdf_create_object_settings()
             for k, v in page.iteritems():
                 wkhtmltopdf_set_object_setting(os, k, v)
-            wkhtmltopdf_add_object(c, os, NULL)
+            c_html_data = NULL
+            data = page.get("data", None)
+            if data:
+                c_html_data = data
+            wkhtmltopdf_add_object(c, os, c_html_data)
         
         ret = wkhtmltopdf_convert(c)
         self.last_http_error_code = wkhtmltopdf_http_error_code(c)
