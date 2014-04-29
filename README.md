@@ -1,6 +1,10 @@
-Python bindings for the fabulous libwkhtmltox using Cython
+Python bindings for the fabulous `libwkhtmltox` using Cython
 
-Special thanks to antialize for creating [wkhtmltopdf](http://github.com/antialize/wkhtmltopdf)
+Special thanks to antialize for creating [wkhtmltopdf](http://wkhtmltopdf.org)
+
+For parameters and settings (for users familiar with the command line utility) see:
+
+    http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html
 
 ### Installation
 
@@ -14,10 +18,10 @@ Tested on:
 ### Pre-requisites on all platforms:
 
  * you need `libwkhtmltox.*` somewhere in your LD path (`/usr/local/lib`)
- * you need the directory `src/include/wkhtmltox` from `wkhtmltopdf` somewhere on your include path (`/usr/local/include`)
+ * you need the directory `include/wkhtmltox` from `wkhtmltopdf` somewhere on your include path (`/usr/local/include`)
 
 ### OSX Notes
-If compiling for OSX (64-bit Python/libwkhtmltox only), until [this bug](http://bugreports.qt.nokia.com/browse/QTBUG-5952) is fixed you need the `qt_menu.nib` directory from the QT source tree in the same directory as your `libwkhtmltox.*` library files.
+If compiling for OSX (64-bit Python/libwkhtmltox only), until [this bug](http://bugreports.qt-project.org/browse/QTBUG-5952) is fixed you need the `qt_menu.nib` directory from the QT source tree in the same directory as your `libwkhtmltox.*` library files.
 
 ### Cython
 If you want to re-generate C source (or have made changes to the Cython template file, .pyx) you need Cython (tested with 0.13):
