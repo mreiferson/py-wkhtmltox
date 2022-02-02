@@ -448,7 +448,7 @@ static char __pyx_k____main__[] = "__main__";
 static char __pyx_k____test__[] = "__test__";
 static char __pyx_k__add_page[] = "add_page";
 static char __pyx_k__settings[] = "settings";
-static char __pyx_k__iteritems[] = "iteritems";
+static char __pyx_k__items[] = "items";
 static char __pyx_k____getattr__[] = "__getattr__";
 static char __pyx_k___c_global_settings[] = "_c_global_settings";
 static PyObject *__pyx_n_s_1;
@@ -462,7 +462,7 @@ static PyObject *__pyx_n_s___pdf;
 static PyObject *__pyx_n_s__add_page;
 static PyObject *__pyx_n_s__convert;
 static PyObject *__pyx_n_s__getattr;
-static PyObject *__pyx_n_s__iteritems;
+static PyObject *__pyx_n_s__items;
 static PyObject *__pyx_n_s__name;
 static PyObject *__pyx_n_s__pages;
 static PyObject *__pyx_n_s__self;
@@ -735,7 +735,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
  * 
  *         for page in pages:             # <<<<<<<<<<<<<<
  *             os = wkhtmltopdf_create_object_settings()
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  */
   if (PyList_CheckExact(__pyx_v_pages) || PyTuple_CheckExact(__pyx_v_pages)) {
     __pyx_t_1 = 0; __pyx_t_3 = __pyx_v_pages; __Pyx_INCREF(__pyx_t_3);
@@ -766,7 +766,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
  * 
  *         for page in pages:
  *             os = wkhtmltopdf_create_object_settings()             # <<<<<<<<<<<<<<
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  *                 wkhtmltopdf_set_object_setting(os, k, v)
  */
     __pyx_v_os = wkhtmltopdf_create_object_settings();
@@ -774,11 +774,11 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
     /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":91
  *         for page in pages:
  *             os = wkhtmltopdf_create_object_settings()
- *             for k, v in page.iteritems():             # <<<<<<<<<<<<<<
+ *             for k, v in page.items():             # <<<<<<<<<<<<<<
  *                 wkhtmltopdf_set_object_setting(os, k, v)
  *             wkhtmltopdf_add_object(c, os, NULL)
  */
-    __pyx_t_4 = PyObject_GetAttr(__pyx_v_page, __pyx_n_s__iteritems); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyObject_GetAttr(__pyx_v_page, __pyx_n_s__items); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_6 = PyObject_Call(__pyx_t_4, ((PyObject *)__pyx_empty_tuple), NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
@@ -836,7 +836,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
 
       /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":92
  *             os = wkhtmltopdf_create_object_settings()
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  *                 wkhtmltopdf_set_object_setting(os, k, v)             # <<<<<<<<<<<<<<
  *             wkhtmltopdf_add_object(c, os, NULL)
  * 
@@ -848,7 +848,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":93
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  *                 wkhtmltopdf_set_object_setting(os, k, v)
  *             wkhtmltopdf_add_object(c, os, NULL)             # <<<<<<<<<<<<<<
  * 
@@ -1949,7 +1949,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s__add_page, __pyx_k__add_page, sizeof(__pyx_k__add_page), 0, 0, 1, 1},
   {&__pyx_n_s__convert, __pyx_k__convert, sizeof(__pyx_k__convert), 0, 0, 1, 1},
   {&__pyx_n_s__getattr, __pyx_k__getattr, sizeof(__pyx_k__getattr), 0, 0, 1, 1},
-  {&__pyx_n_s__iteritems, __pyx_k__iteritems, sizeof(__pyx_k__iteritems), 0, 0, 1, 1},
+  {&__pyx_n_s__items, __pyx_k__items, sizeof(__pyx_k__items), 0, 0, 1, 1},
   {&__pyx_n_s__name, __pyx_k__name, sizeof(__pyx_k__name), 0, 0, 1, 1},
   {&__pyx_n_s__pages, __pyx_k__pages, sizeof(__pyx_k__pages), 0, 0, 1, 1},
   {&__pyx_n_s__self, __pyx_k__self, sizeof(__pyx_k__self), 0, 0, 1, 1},
