@@ -448,7 +448,7 @@ static char __pyx_k____main__[] = "__main__";
 static char __pyx_k____test__[] = "__test__";
 static char __pyx_k__add_page[] = "add_page";
 static char __pyx_k__settings[] = "settings";
-static char __pyx_k__iteritems[] = "iteritems";
+static char __pyx_k__items[] = "items";
 static char __pyx_k____getattr__[] = "__getattr__";
 static char __pyx_k___c_global_settings[] = "_c_global_settings";
 static PyObject *__pyx_n_s_1;
@@ -462,7 +462,7 @@ static PyObject *__pyx_n_s___pdf;
 static PyObject *__pyx_n_s__add_page;
 static PyObject *__pyx_n_s__convert;
 static PyObject *__pyx_n_s__getattr;
-static PyObject *__pyx_n_s__iteritems;
+static PyObject *__pyx_n_s__items;
 static PyObject *__pyx_n_s__name;
 static PyObject *__pyx_n_s__pages;
 static PyObject *__pyx_n_s__self;
@@ -471,7 +471,7 @@ static PyObject *__pyx_n_s__value;
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":63
  *     cdef bint last_http_error_code
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         global wkhtmltopdf_is_init
  *         if not wkhtmltopdf_is_init:
@@ -491,7 +491,7 @@ static int __pyx_pf_9wkhtmltox_4_Pdf___cinit__(PyObject *__pyx_v_self, PyObject 
  *         global wkhtmltopdf_is_init
  *         if not wkhtmltopdf_is_init:             # <<<<<<<<<<<<<<
  *             wkhtmltopdf_is_init = wkhtmltopdf_init(0)
- * 
+ *
  */
   __pyx_t_1 = (!__pyx_v_9wkhtmltox_wkhtmltopdf_is_init);
   if (__pyx_t_1) {
@@ -500,7 +500,7 @@ static int __pyx_pf_9wkhtmltox_4_Pdf___cinit__(PyObject *__pyx_v_self, PyObject 
  *         global wkhtmltopdf_is_init
  *         if not wkhtmltopdf_is_init:
  *             wkhtmltopdf_is_init = wkhtmltopdf_init(0)             # <<<<<<<<<<<<<<
- * 
+ *
  *         self._c_global_settings = wkhtmltopdf_create_global_settings()
  */
     __pyx_v_9wkhtmltox_wkhtmltopdf_is_init = wkhtmltopdf_init(0);
@@ -510,9 +510,9 @@ static int __pyx_pf_9wkhtmltox_4_Pdf___cinit__(PyObject *__pyx_v_self, PyObject 
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":68
  *             wkhtmltopdf_is_init = wkhtmltopdf_init(0)
- * 
+ *
  *         self._c_global_settings = wkhtmltopdf_create_global_settings()             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __dealloc__(self):
  */
   ((struct __pyx_obj_9wkhtmltox__Pdf *)__pyx_v_self)->_c_global_settings = wkhtmltopdf_create_global_settings();
@@ -524,7 +524,7 @@ static int __pyx_pf_9wkhtmltox_4_Pdf___cinit__(PyObject *__pyx_v_self, PyObject 
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":70
  *         self._c_global_settings = wkhtmltopdf_create_global_settings()
- * 
+ *
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         pass
  *         #wkhtmltopdf_deinit();
@@ -539,10 +539,10 @@ static void __pyx_pf_9wkhtmltox_4_Pdf___dealloc__(PyObject *__pyx_v_self) {
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":74
  *         #wkhtmltopdf_deinit();
- * 
+ *
  *     def version(self):             # <<<<<<<<<<<<<<
  *         return wkhtmltopdf_version();
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_version(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -552,10 +552,10 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_version(PyObject *__pyx_v_self, CYTHO
   __Pyx_RefNannySetupContext("version");
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":75
- * 
+ *
  *     def version(self):
  *         return wkhtmltopdf_version();             # <<<<<<<<<<<<<<
- * 
+ *
  *     def set_global_setting(self, char *name, char *value):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -579,10 +579,10 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_version(PyObject *__pyx_v_self, CYTHO
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":77
  *         return wkhtmltopdf_version();
- * 
+ *
  *     def set_global_setting(self, char *name, char *value):             # <<<<<<<<<<<<<<
  *         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_set_global_setting(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
@@ -635,10 +635,10 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_set_global_setting(PyObject *__pyx_v_
   __pyx_L4_argument_unpacking_done:;
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":78
- * 
+ *
  *     def set_global_setting(self, char *name, char *value):
  *         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def convert(self, pages):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -662,7 +662,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_set_global_setting(PyObject *__pyx_v_
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":80
  *         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)
- * 
+ *
  *     def convert(self, pages):             # <<<<<<<<<<<<<<
  *         cdef wkhtmltopdf_converter *c
  *         cdef wkhtmltopdf_object_settings *os
@@ -695,20 +695,20 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":84
  *         cdef wkhtmltopdf_object_settings *os
- * 
+ *
  *         if not len(pages):             # <<<<<<<<<<<<<<
  *             return False
- * 
+ *
  */
   __pyx_t_1 = PyObject_Length(__pyx_v_pages); if (unlikely(__pyx_t_1 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_t_2 = (!__pyx_t_1);
   if (__pyx_t_2) {
 
     /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":85
- * 
+ *
  *         if not len(pages):
  *             return False             # <<<<<<<<<<<<<<
- * 
+ *
  *         c = wkhtmltopdf_create_converter(self._c_global_settings)
  */
     __Pyx_XDECREF(__pyx_r);
@@ -723,19 +723,19 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":87
  *             return False
- * 
+ *
  *         c = wkhtmltopdf_create_converter(self._c_global_settings)             # <<<<<<<<<<<<<<
- * 
+ *
  *         for page in pages:
  */
   __pyx_v_c = wkhtmltopdf_create_converter(((struct __pyx_obj_9wkhtmltox__Pdf *)__pyx_v_self)->_c_global_settings);
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":89
  *         c = wkhtmltopdf_create_converter(self._c_global_settings)
- * 
+ *
  *         for page in pages:             # <<<<<<<<<<<<<<
  *             os = wkhtmltopdf_create_object_settings()
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  */
   if (PyList_CheckExact(__pyx_v_pages) || PyTuple_CheckExact(__pyx_v_pages)) {
     __pyx_t_1 = 0; __pyx_t_3 = __pyx_v_pages; __Pyx_INCREF(__pyx_t_3);
@@ -763,10 +763,10 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
     __pyx_t_4 = 0;
 
     /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":90
- * 
+ *
  *         for page in pages:
  *             os = wkhtmltopdf_create_object_settings()             # <<<<<<<<<<<<<<
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  *                 wkhtmltopdf_set_object_setting(os, k, v)
  */
     __pyx_v_os = wkhtmltopdf_create_object_settings();
@@ -774,11 +774,11 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
     /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":91
  *         for page in pages:
  *             os = wkhtmltopdf_create_object_settings()
- *             for k, v in page.iteritems():             # <<<<<<<<<<<<<<
+ *             for k, v in page.items():             # <<<<<<<<<<<<<<
  *                 wkhtmltopdf_set_object_setting(os, k, v)
  *             wkhtmltopdf_add_object(c, os, NULL)
  */
-    __pyx_t_4 = PyObject_GetAttr(__pyx_v_page, __pyx_n_s__iteritems); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyObject_GetAttr(__pyx_v_page, __pyx_n_s__items); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_6 = PyObject_Call(__pyx_t_4, ((PyObject *)__pyx_empty_tuple), NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
@@ -836,10 +836,10 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
 
       /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":92
  *             os = wkhtmltopdf_create_object_settings()
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  *                 wkhtmltopdf_set_object_setting(os, k, v)             # <<<<<<<<<<<<<<
  *             wkhtmltopdf_add_object(c, os, NULL)
- * 
+ *
  */
       __pyx_t_10 = PyBytes_AsString(__pyx_v_k); if (unlikely((!__pyx_t_10) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_11 = PyBytes_AsString(__pyx_v_v); if (unlikely((!__pyx_t_11) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -848,10 +848,10 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":93
- *             for k, v in page.iteritems():
+ *             for k, v in page.items():
  *                 wkhtmltopdf_set_object_setting(os, k, v)
  *             wkhtmltopdf_add_object(c, os, NULL)             # <<<<<<<<<<<<<<
- * 
+ *
  *         ret = wkhtmltopdf_convert(c)
  */
     wkhtmltopdf_add_object(__pyx_v_c, __pyx_v_os, NULL);
@@ -860,7 +860,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":95
  *             wkhtmltopdf_add_object(c, os, NULL)
- * 
+ *
  *         ret = wkhtmltopdf_convert(c)             # <<<<<<<<<<<<<<
  *         self.last_http_error_code = wkhtmltopdf_http_error_code(c)
  *         wkhtmltopdf_destroy_converter(c)
@@ -868,7 +868,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
   __pyx_v_ret = wkhtmltopdf_convert(__pyx_v_c);
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":96
- * 
+ *
  *         ret = wkhtmltopdf_convert(c)
  *         self.last_http_error_code = wkhtmltopdf_http_error_code(c)             # <<<<<<<<<<<<<<
  *         wkhtmltopdf_destroy_converter(c)
@@ -881,7 +881,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
  *         self.last_http_error_code = wkhtmltopdf_http_error_code(c)
  *         wkhtmltopdf_destroy_converter(c)             # <<<<<<<<<<<<<<
  *         return ret
- * 
+ *
  */
   wkhtmltopdf_destroy_converter(__pyx_v_c);
 
@@ -889,7 +889,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
  *         self.last_http_error_code = wkhtmltopdf_http_error_code(c)
  *         wkhtmltopdf_destroy_converter(c)
  *         return ret             # <<<<<<<<<<<<<<
- * 
+ *
  *     def http_error_code(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -921,10 +921,10 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_convert(PyObject *__pyx_v_self, PyObj
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":100
  *         return ret
- * 
+ *
  *     def http_error_code(self):             # <<<<<<<<<<<<<<
  *         return self.last_http_error_code
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_http_error_code(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -934,11 +934,11 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_http_error_code(PyObject *__pyx_v_sel
   __Pyx_RefNannySetupContext("http_error_code");
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":101
- * 
+ *
  *     def http_error_code(self):
  *         return self.last_http_error_code             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyBool_FromLong(((struct __pyx_obj_9wkhtmltox__Pdf *)__pyx_v_self)->last_http_error_code); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -961,7 +961,7 @@ static PyObject *__pyx_pf_9wkhtmltox_4_Pdf_http_error_code(PyObject *__pyx_v_sel
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":107
  *     pages = []
- * 
+ *
  *     def __init__(self):             # <<<<<<<<<<<<<<
  *         self._pdf = _Pdf()
  *         self.pages = []
@@ -976,11 +976,11 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf___init__(PyObject *__pyx_self, PyObjec
   __pyx_self = __pyx_self;
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":108
- * 
+ *
  *     def __init__(self):
  *         self._pdf = _Pdf()             # <<<<<<<<<<<<<<
  *         self.pages = []
- * 
+ *
  */
   __pyx_t_1 = PyObject_Call(((PyObject *)((PyObject*)__pyx_ptype_9wkhtmltox__Pdf)), ((PyObject *)__pyx_empty_tuple), NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
@@ -991,7 +991,7 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf___init__(PyObject *__pyx_self, PyObjec
  *     def __init__(self):
  *         self._pdf = _Pdf()
  *         self.pages = []             # <<<<<<<<<<<<<<
- * 
+ *
  *     def add_page(self, settings):
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -1013,10 +1013,10 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf___init__(PyObject *__pyx_self, PyObjec
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":111
  *         self.pages = []
- * 
+ *
  *     def add_page(self, settings):             # <<<<<<<<<<<<<<
  *         self.pages.append(settings)
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_3Pdf_add_page(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
@@ -1072,10 +1072,10 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf_add_page(PyObject *__pyx_self, PyObjec
   __pyx_L4_argument_unpacking_done:;
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":112
- * 
+ *
  *     def add_page(self, settings):
  *         self.pages.append(settings)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def convert(self):
  */
   __pyx_t_1 = PyObject_GetAttr(__pyx_v_self, __pyx_n_s__pages); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -1100,10 +1100,10 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf_add_page(PyObject *__pyx_self, PyObjec
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":114
  *         self.pages.append(settings)
- * 
+ *
  *     def convert(self):             # <<<<<<<<<<<<<<
  *         self._pdf.convert(self.pages)
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_3Pdf_convert(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
@@ -1117,10 +1117,10 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf_convert(PyObject *__pyx_self, PyObject
   __pyx_self = __pyx_self;
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":115
- * 
+ *
  *     def convert(self):
  *         self._pdf.convert(self.pages)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __getattr__(self, name):
  */
   __pyx_t_1 = PyObject_GetAttr(__pyx_v_self, __pyx_n_s___pdf); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -1157,10 +1157,10 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf_convert(PyObject *__pyx_self, PyObject
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":117
  *         self._pdf.convert(self.pages)
- * 
+ *
  *     def __getattr__(self, name):             # <<<<<<<<<<<<<<
  *         return getattr(self._pdf, name)
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_3Pdf___getattr__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
@@ -1216,11 +1216,11 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf___getattr__(PyObject *__pyx_self, PyOb
   __pyx_L4_argument_unpacking_done:;
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":118
- * 
+ *
  *     def __getattr__(self, name):
  *         return getattr(self._pdf, name)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyObject_GetAttr(__pyx_v_self, __pyx_n_s___pdf); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 118; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -1247,7 +1247,7 @@ static PyObject *__pyx_pf_9wkhtmltox_3Pdf___getattr__(PyObject *__pyx_self, PyOb
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":125
  *     cdef bint last_http_error_code
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         global wkhtmltoimage_is_init
  *         if not wkhtmltoimage_is_init:
@@ -1267,7 +1267,7 @@ static int __pyx_pf_9wkhtmltox_5Image___cinit__(PyObject *__pyx_v_self, PyObject
  *         global wkhtmltoimage_is_init
  *         if not wkhtmltoimage_is_init:             # <<<<<<<<<<<<<<
  *             wkhtmltoimage_is_init = wkhtmltoimage_init(0)
- * 
+ *
  */
   __pyx_t_1 = (!__pyx_v_9wkhtmltox_wkhtmltoimage_is_init);
   if (__pyx_t_1) {
@@ -1276,7 +1276,7 @@ static int __pyx_pf_9wkhtmltox_5Image___cinit__(PyObject *__pyx_v_self, PyObject
  *         global wkhtmltoimage_is_init
  *         if not wkhtmltoimage_is_init:
  *             wkhtmltoimage_is_init = wkhtmltoimage_init(0)             # <<<<<<<<<<<<<<
- * 
+ *
  *         self._c_global_settings = wkhtmltoimage_create_global_settings()
  */
     __pyx_v_9wkhtmltox_wkhtmltoimage_is_init = wkhtmltoimage_init(0);
@@ -1286,9 +1286,9 @@ static int __pyx_pf_9wkhtmltox_5Image___cinit__(PyObject *__pyx_v_self, PyObject
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":130
  *             wkhtmltoimage_is_init = wkhtmltoimage_init(0)
- * 
+ *
  *         self._c_global_settings = wkhtmltoimage_create_global_settings()             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __dealloc__(self):
  */
   ((struct __pyx_obj_9wkhtmltox_Image *)__pyx_v_self)->_c_global_settings = wkhtmltoimage_create_global_settings();
@@ -1300,7 +1300,7 @@ static int __pyx_pf_9wkhtmltox_5Image___cinit__(PyObject *__pyx_v_self, PyObject
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":132
  *         self._c_global_settings = wkhtmltoimage_create_global_settings()
- * 
+ *
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         pass
  *         #wkhtmltoimage_deinit();
@@ -1315,10 +1315,10 @@ static void __pyx_pf_9wkhtmltox_5Image___dealloc__(PyObject *__pyx_v_self) {
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":136
  *         #wkhtmltoimage_deinit();
- * 
+ *
  *     def version(self):             # <<<<<<<<<<<<<<
  *         return wkhtmltopdf_version();
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_5Image_version(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
@@ -1328,10 +1328,10 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_version(PyObject *__pyx_v_self, CYTH
   __Pyx_RefNannySetupContext("version");
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":137
- * 
+ *
  *     def version(self):
  *         return wkhtmltopdf_version();             # <<<<<<<<<<<<<<
- * 
+ *
  *     def set_global_setting(self, char *name, char *value):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -1355,10 +1355,10 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_version(PyObject *__pyx_v_self, CYTH
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":139
  *         return wkhtmltopdf_version();
- * 
+ *
  *     def set_global_setting(self, char *name, char *value):             # <<<<<<<<<<<<<<
  *         return wkhtmltoimage_set_global_setting(self._c_global_settings, name, value)
- * 
+ *
  */
 
 static PyObject *__pyx_pf_9wkhtmltox_5Image_set_global_setting(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
@@ -1411,10 +1411,10 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_set_global_setting(PyObject *__pyx_v
   __pyx_L4_argument_unpacking_done:;
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":140
- * 
+ *
  *     def set_global_setting(self, char *name, char *value):
  *         return wkhtmltoimage_set_global_setting(self._c_global_settings, name, value)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def convert(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -1438,7 +1438,7 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_set_global_setting(PyObject *__pyx_v
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":142
  *         return wkhtmltoimage_set_global_setting(self._c_global_settings, name, value)
- * 
+ *
  *     def convert(self):             # <<<<<<<<<<<<<<
  *         cdef wkhtmltoimage_converter *c
  *         c = wkhtmltoimage_create_converter(self._c_global_settings, NULL)
@@ -1484,7 +1484,7 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_convert(PyObject *__pyx_v_self, CYTH
  *         self.last_http_error_code = wkhtmltoimage_http_error_code(c)
  *         wkhtmltoimage_destroy_converter(c)             # <<<<<<<<<<<<<<
  *         return ret
- * 
+ *
  */
   wkhtmltoimage_destroy_converter(__pyx_v_c);
 
@@ -1492,7 +1492,7 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_convert(PyObject *__pyx_v_self, CYTH
  *         self.last_http_error_code = wkhtmltoimage_http_error_code(c)
  *         wkhtmltoimage_destroy_converter(c)
  *         return ret             # <<<<<<<<<<<<<<
- * 
+ *
  *     def http_error_code(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -1516,7 +1516,7 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_convert(PyObject *__pyx_v_self, CYTH
 
 /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":150
  *         return ret
- * 
+ *
  *     def http_error_code(self):             # <<<<<<<<<<<<<<
  *         return self.last_http_error_code
  */
@@ -1528,7 +1528,7 @@ static PyObject *__pyx_pf_9wkhtmltox_5Image_http_error_code(PyObject *__pyx_v_se
   __Pyx_RefNannySetupContext("http_error_code");
 
   /* "/Users/mreiferson/dev/git/py-wkhtmltox/wkhtmltox.pyx":151
- * 
+ *
  *     def http_error_code(self):
  *         return self.last_http_error_code             # <<<<<<<<<<<<<<
  */
@@ -1949,7 +1949,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s__add_page, __pyx_k__add_page, sizeof(__pyx_k__add_page), 0, 0, 1, 1},
   {&__pyx_n_s__convert, __pyx_k__convert, sizeof(__pyx_k__convert), 0, 0, 1, 1},
   {&__pyx_n_s__getattr, __pyx_k__getattr, sizeof(__pyx_k__getattr), 0, 0, 1, 1},
-  {&__pyx_n_s__iteritems, __pyx_k__iteritems, sizeof(__pyx_k__iteritems), 0, 0, 1, 1},
+  {&__pyx_n_s__items, __pyx_k__items, sizeof(__pyx_k__items), 0, 0, 1, 1},
   {&__pyx_n_s__name, __pyx_k__name, sizeof(__pyx_k__name), 0, 0, 1, 1},
   {&__pyx_n_s__pages, __pyx_k__pages, sizeof(__pyx_k__pages), 0, 0, 1, 1},
   {&__pyx_n_s__self, __pyx_k__self, sizeof(__pyx_k__self), 0, 0, 1, 1},
