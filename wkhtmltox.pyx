@@ -69,10 +69,10 @@ cdef class _Pdf:
     
     def __dealloc__(self):
         pass
-        #wkhtmltopdf_deinit();
+        #wkhtmltopdf_deinit()
     
     def version(self):
-        return wkhtmltopdf_version();
+        return wkhtmltopdf_version()
     
     def set_global_setting(self, char *name, char *value):
         return wkhtmltopdf_set_global_setting(self._c_global_settings, name, value)
@@ -88,7 +88,7 @@ cdef class _Pdf:
         
         for page in pages:
             os = wkhtmltopdf_create_object_settings()
-            for k, v in page.iteritems():
+            for k, v in page.items():
                 wkhtmltopdf_set_object_setting(os, k, v)
             wkhtmltopdf_add_object(c, os, NULL)
         
@@ -131,10 +131,10 @@ cdef class Image:
     
     def __dealloc__(self):
         pass
-        #wkhtmltoimage_deinit();
+        #wkhtmltoimage_deinit()
     
     def version(self):
-        return wkhtmltopdf_version();
+        return wkhtmltopdf_version()
     
     def set_global_setting(self, char *name, char *value):
         return wkhtmltoimage_set_global_setting(self._c_global_settings, name, value)
@@ -149,3 +149,4 @@ cdef class Image:
     
     def http_error_code(self):
         return self.last_http_error_code
+
