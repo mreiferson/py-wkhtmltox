@@ -1,5 +1,10 @@
+# -*- coding: utf-8 -*-
+
 import os
 import re
+
+from .utilities import (
+    PDF, assert_images_are_identical, assert_pdf_objects_are_identical)
 
 
 def test_image():
@@ -7,14 +12,16 @@ def test_image():
     img = wkhtmltox.Image()
     test_filename = b'test.jpg'
     img.set_global_setting(b'out', test_filename)
-    img.set_global_setting(b'in', b'google.html')
+    img.set_global_setting(b'in', b'tests/simple.html')
     img.convert()
+
     assert os.path.isfile(test_filename)
-    with open('test_org.jpg', 'rb') as org, open(test_filename, 'rb') as new:
-        original = org.read().decode('ISO-8859-1')
-        generated = new.read().decode('ISO-8859-1')
-    os.remove(test_filename)
-    assert original == generated
+    try:
+        with open('tests/simple.jpg', 'rb') as org, open(test_filename, 'rb') as new:
+            assert assert_images_are_identical(
+                'test_image', org.read(), new.read(), 'jpg')
+    finally:
+        os.remove(test_filename)
 
 
 def test_pdf():
@@ -22,14 +29,15 @@ def test_pdf():
     pdf = wkhtmltox.Pdf()
     test_filename = b'test.pdf'
     pdf.set_global_setting(b'out', test_filename)
-    pdf.add_page({b'page': b'google.html'})
+    pdf.add_page({b'page': b'tests/simple.html'})
     pdf.convert()
 
     assert os.path.isfile(test_filename)
-    with open('test_org.pdf', 'rb') as org, open(test_filename, 'rb') as new:
-        original = org.read().decode('ISO-8859-1')
-        generated = re.sub(r"CreationDate \(D:\d{14}\+\d{2}'00",
-                           "CreationDate (D:20220426161454+02'00",
-                           new.read().decode('ISO-8859-1'))
-    os.remove(test_filename)
-    assert original == generated
+    try:
+        with open('tests/simple.pdf', 'rb') as org, open(test_filename, 'rb') as new:
+            assert_pdf_objects_are_identical(
+                'test_pdf',
+                PDF.from_bytes(org.read()), PDF.from_bytes(new.read())
+            )
+    finally:
+        os.remove(test_filename)
