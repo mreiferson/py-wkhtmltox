@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  tox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c 'tox -q'
+    container_name: py-wkhtmltox-tox

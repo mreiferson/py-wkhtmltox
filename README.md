@@ -1,20 +1,29 @@
+# py-wkhtmltopx
 Python bindings for the fabulous `libwkhtmltox` using Cython
 
 Special thanks to antialize for creating [wkhtmltopdf](http://wkhtmltopdf.org)
 
-For parameters and settings (for users familiar with the command line utility) see:
-
-    http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html
+For parameters and settings (for users familiar with the command line utility)
+see: [page settings](http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html)
 
 ### Installation
+```
+pip install -U -r requirements/build.txt
+pip install -e .
+```
+`pip` can create `wkhtmltox.so` and the file conflicts with `tox` (run locally)
+unless it's deleted. 
+But don't be surprise when `tox` will fail. It is due to dynamic nature of HTML,
+your local system can render HTML slightly different so content of converted
+PDF will be ok, but not (byte by byte) 100% exactly the same all the time.
 
-    $ python setup.py install
-
-Tested on:
-
- * Mac OSX 10.6.4 Snow Leopard, Python 2.6.1 (32-bit and 64-bit)
- * CentOS 5.5, Python 2.6.4 (32-bit)
- * Windows 7, Python 2.7.6 (32-bit)
+### Tests
+Due to reason form previous section tests need be executed in container to secure
+100% replicteable test environment:
+```
+docker-compose run tox
+```
+Note: It can take up to ~8 min for download and build docker container.
 
 ### Pre-requisites on all platforms:
 
@@ -40,6 +49,7 @@ have `C:\Program Files\wkhtmltopdf\bin` in the path or copy `wkhtmltox.dll` alon
 extension.
 
 ### Cython
-If you want to re-generate C source (or have made changes to the Cython template file, .pyx) you need Cython (tested with 0.13):
-
-    $ easy_install cython
+If you want to re-generate C source (or have made changes to the Cython template file, .pyx) you need Cython (tested with 0.29.24):
+```
+pip install -U Cython==0.29.24
+```
